@@ -47,15 +47,6 @@ router.get("/api/workouts/range", function (req, res) {
 });
 
 
-router.post("/api/workouts/range", function (req, res) {
-    Workout.create({
-    }).then(workoutdb =>
-        res.json(workoutdb)
-    ).catch(err => {
-        res.json(err)
-    })
-});
-
 router.put("/api/workouts/:id", ({ body, params }, res) => {
     Workout.findByIdAndUpdate(
         params.id,
